@@ -91,9 +91,9 @@ const LandingPage = () => {
       >
         <motion.h2 variants={itemVariants}>Why Sabi Wallet?</motion.h2>
         <div className="features-grid">
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <motion.div
-              key={index}
+              key={feature.title}
               className="feature-card"
               variants={itemVariants}
               whileHover={{ y: -10, transition: { duration: 0.2 } }}

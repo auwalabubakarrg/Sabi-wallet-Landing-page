@@ -79,9 +79,9 @@ const AboutPage = () => {
       >
         <h2>Why Choose Sabi?</h2>
         <div className="stats-grid">
-          {stats.map((stat, index) => (
+          {stats.map((stat) => (
             <motion.div
-              key={index}
+              key={stat.label}
               className="stat-card"
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
