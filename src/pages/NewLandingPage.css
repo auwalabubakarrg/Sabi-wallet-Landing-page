@@ -223,7 +223,7 @@
 .wallet-mockup {
   max-width: 320px;
   height: auto;
-  border-radius: 12%;
+  border-radius: 48px;
   transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
   filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.3));
   will-change: transform;
