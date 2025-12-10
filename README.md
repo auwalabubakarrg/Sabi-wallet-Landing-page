@@ -102,6 +102,10 @@ Sabi-wallet-Landing-page/
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
 
+## Backend integration
+
+- See [docs/backend-integration.md](docs/backend-integration.md) for details on the mocked APIs, the contact/waitlist payload contract, and how to swap in your own backend implementation.
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
