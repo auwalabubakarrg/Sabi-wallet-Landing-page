@@ -1,6 +1,46 @@
+import { useState } from "react";
 import "./NewLandingPage.css";
 
+const WAITLIST_API_URL = "/api/waitlist";
+
 const NewLandingPage = () => {
+  const [waitlistStatus, setWaitlistStatus] = useState(null);
+  const [isWaitlistSubmitting, setIsWaitlistSubmitting] = useState(false);
+
+  const handleWaitlistSubmit = async (event) => {
+    event.preventDefault();
+    setWaitlistStatus(null);
+    setIsWaitlistSubmitting(true);
+    const payload = Object.fromEntries(new FormData(event.target).entries());
+
+    try {
+      const response = await fetch(WAITLIST_API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error("Waitlist submission failed");
+      }
+
+      setWaitlistStatus({
+        type: "success",
+        message: "Thanks! We'll email you at the address provided when the beta drops.",
+      });
+      event.target.reset();
+    } catch (error) {
+      setWaitlistStatus({
+        type: "error",
+        message:
+          "We couldn't record your spot. Please try again or email sabiwallet@gmail.com and we'll add you manually.",
+      });
+    } finally {
+      setIsWaitlistSubmitting(false);
+    }
+  };
   return (
     <div className="new-landing-page">
       <header className="header">
@@ -486,19 +526,16 @@ const NewLandingPage = () => {
               </p>
             </div>
             <div className="waitlist-card">
-              <form
-                className="waitlist-form"
-                action="mailto:sabiwallet@gmail.com"
-                method="POST"
-                encType="text/plain"
-              >
+              <form className="waitlist-form" onSubmit={handleWaitlistSubmit}>
                 <div className="form-row">
                   <div className="form-group">
                     <label className="form-label">Full Name:</label>
                     <input
                       type="text"
                       className="form-input"
+                      name="name"
                       placeholder="Abdullahi Ibrahim"
+                      required
                     />
                   </div>
                   <div className="form-group">
@@ -506,14 +543,16 @@ const NewLandingPage = () => {
                     <input
                       type="tel"
                       className="form-input"
+                      name="phone"
                       placeholder="0803 123 4567"
+                      required
                     />
                   </div>
                 </div>
                 <div className="form-group">
                   <label className="form-label">City (Optional):</label>
-                  <select className="form-select">
-                    <option>Select your city</option>
+                  <select className="form-select" name="city">
+                    <option value="">Select your city</option>
                     <option>Kaduna</option>
                     <option>Lagos</option>
                     <option>Abuja</option>
@@ -527,11 +566,16 @@ const NewLandingPage = () => {
                   <input
                     type="email"
                     className="form-input"
+                    name="email"
                     placeholder="your@email.com"
                   />
                 </div>
-                <button type="submit" className="waitlist-submit">
-                  Join the Waitlist
+                <button
+                  type="submit"
+                  className="waitlist-submit"
+                  disabled={isWaitlistSubmitting}
+                >
+                  {isWaitlistSubmitting ? "Requesting…" : "Join the Waitlist"}
                   <svg width="16" height="18" viewBox="0 0 16 18" fill="none">
                     <path
                       d="M15.4195 9.79448C15.859 9.35503 15.859 8.64136 15.4195 8.2019L9.79453 2.5769C9.35508 2.13745 8.64141 2.13745 8.20195 2.5769C7.7625 3.01636 7.7625 3.73003 8.20195 4.16948L11.9109 7.87495H1.125C0.502734 7.87495 0 8.37769 0 8.99995C0 9.62222 0.502734 10.125 1.125 10.125H11.9074L8.20547 13.8304C7.76602 14.2699 7.76602 14.9835 8.20547 15.423C8.64492 15.8625 9.35859 15.8625 9.79805 15.423L15.423 9.798L15.4195 9.79448Z"
@@ -542,6 +586,14 @@ const NewLandingPage = () => {
                 <p className="form-note">
                   We will send your waitlist request directly to sabiwallet@gmail.com.
                 </p>
+                {waitlistStatus && (
+                  <p
+                    className={`waitlist-form-status ${waitlistStatus.type}`}
+                    aria-live="polite"
+                  >
+                    {waitlistStatus.message}
+                  </p>
+                )}
               </form>
               <div className="waitlist-stats">
                 <div className="waitlist-stat">

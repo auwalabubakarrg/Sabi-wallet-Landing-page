@@ -1065,6 +1065,20 @@
   line-height: 24px;
 }
 
+.waitlist-form-status {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.waitlist-form-status.success {
+  color: #00ffb2;
+}
+
+.waitlist-form-status.error {
+  color: #ff7d7d;
+}
+
 .waitlist-card {
   padding: 40px;
   border-radius: 24px;
