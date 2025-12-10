@@ -25,8 +25,13 @@ This project ships with fully wired front-end forms for both the contact page an
 ## Local mock server
 
 - Mocks live in `src/mocks/apiMocks.js`. They delay for ~400 ms, parse the incoming JSON, and return predictable responses so the UI can be tested without a real backend.
-- `main.jsx` imports `startMockServer` and invokes it when `import.meta.env.DEV` is true. The patched `window.fetch` only intercepts the two API routes used by the forms and proxies all other requests to the real `fetch` implementation.
-- To run against a real backend, either remove the mock import/initialization or set `import.meta.env.DEV` to `false` (e.g., build for production). The mocks are never initialized in production builds.
+- `main.jsx` now imports `startMockServer` and gates it behind `import.meta.env.DEV && import.meta.env.VITE_ENABLE_API_MOCKS === 'true'`. Leave the default `VITE_ENABLE_API_MOCKS` undefined so production and standard dev builds call the real APIs; set this flag to `true` if you want the mock responses locally while you develop.
+The patched `window.fetch` only intercepts the two API routes used by the forms and proxies all other requests to the real `fetch` implementation.
+To run against a real backend, set `VITE_ENABLE_API_MOCKS` to anything other than `'true'` (e.g., leave it undefined) so the mocks never activate.
+
+### Netlify functions (optional now)
+
+The repo now includes `netlify/functions/contact.js` and `netlify/functions/waitlist.js`, so deploying to Netlify automatically exposes `/api/contact` and `/api/waitlist`. They mirror the front-end contracts, perform basic validation, and log submissions—ideal for quick staging before wiring a real email or CRM integration.
 
 ## Implementing the real backend
 

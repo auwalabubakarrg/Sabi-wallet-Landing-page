@@ -10,7 +10,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </React.StrictMode>,
 )
 
-// Initialize local API mocks during development so fetch calls resolve reliably.
-if (import.meta.env.DEV) {
+const enableApiMocks = import.meta.env.DEV && import.meta.env.VITE_ENABLE_API_MOCKS === 'true'
+
+if (enableApiMocks) {
   startMockServer()
 }
