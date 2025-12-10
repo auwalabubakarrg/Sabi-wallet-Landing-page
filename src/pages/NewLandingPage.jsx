@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./NewLandingPage.css";
 
 const WAITLIST_API_URL = "/api/waitlist";
@@ -102,9 +103,9 @@ const NewLandingPage = () => {
                     />
                   </svg>
                 </a>
-                <a href="/about" className="secondary-button">
+                <Link to="/about" className="secondary-button">
                   Learn More
-                </a>
+                </Link>
               </div>
             </div>
             <div className="hero-mockups">
@@ -710,14 +711,14 @@ const NewLandingPage = () => {
               <h4 className="footer-section-title">Company</h4>
               <ul className="footer-links">
                 <li>
-                  <a href="/about" className="footer-link">
+                  <Link to="/about" className="footer-link">
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/contact" className="footer-link">
+                  <Link to="/contact" className="footer-link">
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

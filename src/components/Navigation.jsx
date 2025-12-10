@@ -38,6 +38,14 @@ const Navigation = () => {
               About
             </Link>
           </li>
+          <li>
+            <Link
+              to="/contact"
+              className={location.pathname === '/contact' ? 'active' : ''}
+            >
+              Contact
+            </Link>
+          </li>
         </ul>
       </div>
     </motion.nav>
