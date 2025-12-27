@@ -69,12 +69,12 @@ const AboutPage = () => (
       </div>
 
       <div className="about-cta">
-        <p className="cta-title">MVP drops April 2026</p>
+        <p className="cta-title">Beta Available Now</p>
         <p className="cta-subtitle">
-          Kaduna beta first. Join the waitlist to be among the first Nigerians to test.
+          Be among the first Nigerians to test the future of Bitcoin. Download the beta now.
         </p>
-        <a href="#waitlist" className="cta-button">
-          Join the Waitlist
+        <a href="https://github.com/AuwalRG8/Sabi/releases" className="cta-button" target="_blank" rel="noopener noreferrer">
+          Download Beta
         </a>
       </div>
     </div>

@@ -1,28 +1,46 @@
+/* ============================================
+   NAVIGATION - Moniepoint 2025 Design
+   ============================================ */
+
 .navigation {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(36, 36, 36, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(12, 12, 26, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   z-index: 1000;
   padding: 1rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav-container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.logo {
+  text-decoration: none;
+}
+
 .logo h2 {
-  color: #646cff;
+  color: #FFFFFF;
   font-size: 1.5rem;
+  font-weight: 700;
   margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.logo h2::after {
+  content: '₿';
+  color: #F7931A;
+  margin-left: 2px;
 }
 
 .nav-links {
@@ -34,37 +52,45 @@
 }
 
 .nav-links a {
-  color: rgba(255, 255, 255, 0.87);
+  color: #A1A1B2;
   text-decoration: none;
   font-size: 1rem;
-  transition: color 0.3s;
+  font-weight: 400;
+  transition: color 0.2s ease;
   position: relative;
 }
 
 .nav-links a:hover {
-  color: #646cff;
+  color: #FFFFFF;
 }
 
 .nav-links a.active {
-  color: #646cff;
+  color: #F7931A;
 }
 
 .nav-links a.active::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: -8px;
   left: 0;
   right: 0;
   height: 2px;
-  background: #646cff;
+  background: #F7931A;
+  border-radius: 1px;
 }
 
-@media (prefers-color-scheme: light) {
-  .navigation {
-    background: rgba(255, 255, 255, 0.95);
-  }
+/* Hide on landing page - it has its own header */
+.landing-page ~ .navigation,
+.new-landing-page ~ .navigation {
+  display: none;
+}
 
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+  
   .nav-links a {
-    color: #213547;
+    font-size: 0.9rem;
   }
 }
