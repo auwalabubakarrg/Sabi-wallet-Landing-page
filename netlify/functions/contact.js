@@ -3,7 +3,7 @@
 // Sends contact form submissions to sabibwallet@gmail.com using Resend
 
 const RECIPIENT_EMAIL = "sabibwallet@gmail.com"
-const SENDER_EMAIL = "Sabi Wallet <contact@eeviedorei.resend.app>"
+const SENDER_EMAIL = "Sabi Wallet <noreply@sabiwallet.online>"
 
 const headers = {
   "Access-Control-Allow-Origin": "*",
