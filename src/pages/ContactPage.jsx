@@ -36,7 +36,7 @@ const ContactPage = () => {
       setStatus({
         type: "error",
         message:
-          "Could not deliver your message. Please try again later or email sabiwallet@gmail.com directly.",
+          "Could not deliver your message. Please try again later or email sabibwallet@gmail.com directly.",
       })
     } finally {
       setIsSubmitting(false)
@@ -51,7 +51,7 @@ const ContactPage = () => {
           <h1>Talk to the Sabi Wallet team</h1>
           <p className="contact-intro">
             Need help, partnership info or press assets? Drop us a line and we will reply from
-            <a href="mailto:sabiwallet@gmail.com"> sabiwallet@gmail.com</a> within one business day.
+            <a href="mailto:sabibwallet@gmail.com"> sabibwallet@gmail.com</a> within one business day.
           </p>
         </header>
         <div className="contact-grid">
@@ -64,7 +64,7 @@ const ContactPage = () => {
             <ul>
               <li>
                 <span>Email:</span>
-                <a href="mailto:sabiwallet@gmail.com">sabiwallet@gmail.com</a>
+                <a href="mailto:sabibwallet@gmail.com">sabibwallet@gmail.com</a>
               </li>
               <li>
                 <span>Location:</span>
@@ -110,7 +110,7 @@ const ContactPage = () => {
             <button type="submit" className="contact-submit" disabled={isSubmitting}>
               {isSubmitting ? "Sending…" : "Send Message"}
             </button>
-            <p className="form-note">All submissions go straight to sabiwallet@gmail.com. We aim to reply within one business day.</p>
+            <p className="form-note">All submissions go straight to sabibwallet@gmail.com. We aim to reply within one business day.</p>
             {status && (
               <p className={`form-note status ${status.type}`}>{status.message}</p>
             )}

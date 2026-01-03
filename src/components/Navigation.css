@@ -1,5 +1,5 @@
 /* ============================================
-   NAVIGATION - Moniepoint 2025 Design
+   NAVIGATION - Sabi Wallet 2025 Design
    ============================================ */
 
 .navigation {
@@ -89,7 +89,7 @@
   .nav-links {
     gap: 1.5rem;
   }
-  
+
   .nav-links a {
     font-size: 0.9rem;
   }

@@ -94,8 +94,8 @@ const NewLandingPage = () => {
                 <span className="gradient-text">na your money</span>
               </h1>
               <p className="hero-description">
-                Non-custodial Bitcoin + Lightning wallet built in Kaduna, Nigeria. 
-                Instant zaps. Social recovery. P2P trading. No KYC. 
+                Non-custodial Bitcoin + Lightning wallet built in Kaduna, Nigeria.
+                Instant zaps. Social recovery. P2P trading. No KYC.
                 Beta ready – download now.
               </p>
               <div className="hero-buttons">
@@ -234,23 +234,25 @@ const NewLandingPage = () => {
                 Long-press your balance to switch between Naira and sats instantly
               </p>
             </div>
-            <div className="demo-card" onClick={() => setShowSats(!showSats)}>
-              <div className="demo-card-header">
-                <span className="demo-label">Your Balance</span>
-                <span className="demo-tap-hint">Tap to flip</span>
-              </div>
-              <div className={`demo-balance ${showSats ? 'flipped' : ''}`}>
-                <div className="balance-front">
-                  <span className="balance-currency">₦</span>
-                  <span className="balance-amount">124,530.00</span>
+            <div className="demo-card-wrapper">
+              <div className="demo-card" onClick={() => setShowSats(!showSats)}>
+                <div className="demo-card-header">
+                  <span className="demo-label">Your Balance</span>
+                  <span className="demo-tap-hint">Tap to flip</span>
                 </div>
-                <div className="balance-back">
-                  <span className="balance-amount">42,000</span>
-                  <span className="balance-currency">sats</span>
+                <div className={`demo-balance ${showSats ? 'flipped' : ''}`}>
+                  <div className="balance-front">
+                    <span className="balance-currency">₦</span>
+                    <span className="balance-amount">124,530.00</span>
+                  </div>
+                  <div className="balance-back">
+                    <span className="balance-amount">42,000</span>
+                    <span className="balance-currency">sats</span>
+                  </div>
                 </div>
-              </div>
-              <div className="demo-card-footer">
-                <span className="demo-rate">1 BTC ≈ ₦95,000,000</span>
+                <div className="demo-card-footer">
+                  <span className="demo-rate">1 BTC ≈ ₦95,000,000</span>
+                </div>
               </div>
             </div>
           </div>
@@ -268,14 +270,18 @@ const NewLandingPage = () => {
                 Hausa, Yoruba, Igbo, Pidgin from day 1
               </p>
             </div>
-            <div className="cities-grid">
-              {cities.map((city, index) => (
-                <div className="city-card" key={index}>
-                  <div className="city-dot"></div>
-                  <h3 className="city-name">{city.name}</h3>
-                  <p className="city-description">{city.description}</p>
-                </div>
-              ))}
+            <div className="cities-card-container">
+              <div className="cities-decorative cities-decorative-1"></div>
+              <div className="cities-decorative cities-decorative-2"></div>
+              <div className="cities-grid">
+                {cities.map((city, index) => (
+                  <div className="city-card" key={index}>
+                    <div className="city-dot"></div>
+                    <h3 className="city-name">{city.name}</h3>
+                    <p className="city-description">{city.description}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -345,8 +351,8 @@ const NewLandingPage = () => {
             </div>
             <div className="faq-list">
               {faqData.map((faq, index) => (
-                <div 
-                  className={`faq-item ${activeFaq === index ? 'active' : ''}`} 
+                <div
+                  className={`faq-item ${activeFaq === index ? 'active' : ''}`}
                   key={index}
                   onClick={() => toggleFaq(index)}
                 >
