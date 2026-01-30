@@ -36,7 +36,7 @@ const NewLandingPage = () => {
   const faqData = [
     {
       question: "How I open account?",
-      answer: "Just download the app, create your PIN, and you're ready. No KYC, no documents, no wahala. You go get your wallet in less than 2 minutes."
+      answer: "Just download the app from Google Play Store, create your PIN, and you're ready. No KYC, no documents, no wahala. You go get your wallet in less than 2 minutes."
     },
     {
       question: "What is non-custodial?",
@@ -57,15 +57,16 @@ const NewLandingPage = () => {
   ];
 
   const features = [
-    { icon: "⚡", text: "Lightning payments" },
+    { icon: "⚡", text: "Lightning payments (instant send/receive)" },
     { icon: "🌐", text: "Nostr feed + zaps" },
-    { icon: "🤝", text: "Social recovery over Nostr DMs" },
-    { icon: "🔄", text: "P2P trading" },
-    { icon: "💵", text: "Cash buy/sell" },
-    { icon: "📱", text: "VTU (airtime, data, electricity)" },
+    { icon: "🤝", text: "Social recovery (3 trusted contacts)" },
+    { icon: "🔄", text: "P2P trading (BTC/USDT with Naira)" },
+    { icon: "💳", text: "Multiple payment methods (Bank, OPay, PalmPay)" },
+    { icon: "📱", text: "VTU & Bills (Airtime, Data, NEPA)" },
     { icon: "🗣️", text: "Multi-language (English, Hausa, Yoruba, Pidgin)" },
-    { icon: "🔐", text: "PIN + biometric" },
-    { icon: "📖", text: "Open source MIT" }
+    { icon: "🔐", text: "Secure (PIN + biometric + encrypted storage)" },
+    { icon: "💱", text: "Live Naira rates (tap to flip to sats)" },
+    { icon: "📖", text: "Open source MIT license" }
   ];
 
   const cities = [
@@ -92,7 +93,7 @@ const NewLandingPage = () => {
             <a href="https://github.com/AuwalRG8/Sabi" className="nav-link" target="_blank" rel="noopener noreferrer">GitHub</a>
             <Link to="/about" className="nav-link">About</Link>
             <Link to="/contact" className="nav-link">Contact</Link>
-            <a href="#download" className="nav-button">Download Beta</a>
+            <a href="https://play.google.com/store/apps/details?id=com.sabi.app" className="nav-button" target="_blank" rel="noopener noreferrer">Get on Play Store</a>
           </nav>
           <button
             className={`mobile-menu-btn ${isMobileMenuOpen ? 'active' : ''}`}
@@ -114,7 +115,7 @@ const NewLandingPage = () => {
             <a href="https://github.com/AuwalRG8/Sabi" className="mobile-nav-link" target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>GitHub</a>
             <Link to="/about" className="mobile-nav-link" onClick={closeMobileMenu}>About</Link>
             <Link to="/contact" className="mobile-nav-link" onClick={closeMobileMenu}>Contact</Link>
-            <a href="#download" className="mobile-nav-button" onClick={closeMobileMenu}>Download Beta</a>
+            <a href="https://play.google.com/store/apps/details?id=com.sabi.app" className="mobile-nav-button" onClick={closeMobileMenu} target="_blank" rel="noopener noreferrer">Get on Play Store</a>
           </nav>
         </div>
       </header>
@@ -124,28 +125,31 @@ const NewLandingPage = () => {
         <section className="hero-section">
           <div className="hero-container">
             <div className="hero-content">
-              <div className="hero-badge">
-                <span className="badge-dot"></span>
-                Beta Available Now
+              <div className="hero-badge hero-badge-live">
+                <span className="badge-dot badge-dot-live"></span>
+                🎉 Now Live on Play Store
               </div>
               <h1 className="hero-title">
                 Your money<br />
                 <span className="gradient-text">na your money</span>
               </h1>
               <p className="hero-description">
-                Non-custodial Bitcoin + Lightning wallet built in Kaduna, Nigeria.
-                Instant zaps. Social recovery. P2P trading. No KYC.
-                Beta ready – download now.
+                Non-custodial Bitcoin + Lightning + Nostr wallet built in Kaduna, Nigeria.
+                Instant zaps. Social recovery. P2P trading. VTU & Bills. No KYC.
+                Download now on Google Play Store.
               </p>
               <div className="hero-buttons">
-                <a href="https://github.com/AuwalRG8/Sabi/releases" className="primary-button" target="_blank" rel="noopener noreferrer">
-                  Download Beta Now
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M10 2.5V12.5M10 12.5L14.167 8.333M10 12.5L5.833 8.333M3.333 15.833H16.667" stroke="#0C0C1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <a href="https://play.google.com/store/apps/details?id=com.sabi.app" className="primary-button playstore-button" target="_blank" rel="noopener noreferrer">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M3.609 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.807 1.626a1 1 0 0 1 0 1.732l-2.808 1.626L15.206 12l2.492-2.492zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z" fill="#0C0C1A"/>
                   </svg>
+                  Get on Play Store
                 </a>
-                <button className="secondary-button" disabled>
-                  TestFlight Coming Soon
+                <button className="secondary-button appstore-coming">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" fill="currentColor"/>
+                  </svg>
+                  App Store Coming Soon
                 </button>
               </div>
             </div>
@@ -349,31 +353,36 @@ const NewLandingPage = () => {
           </div>
         </section>
 
-        {/* Section 6: Beta Download */}
+        {/* Section 6: Download - MVP Live */}
         <section className="download-section" id="download">
           <div className="download-container">
             <div className="download-content">
               <h2 className="download-title">
-                Beta ready.<br />
+                MVP is live.<br />
                 <span className="gradient-text">Download now.</span>
               </h2>
               <p className="download-subtitle">
-                Be among the first to test the future of Bitcoin in Nigeria
+                Experience real Bitcoin sovereignty. Now available on Google Play Store.
               </p>
               <div className="download-buttons">
-                <a href="https://github.com/AuwalRG8/Sabi/releases" className="download-button-primary" target="_blank" rel="noopener noreferrer">
+                <a href="https://play.google.com/store/apps/details?id=com.sabi.app" className="download-button-primary playstore-button" target="_blank" rel="noopener noreferrer">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 2L12 15M12 15L17 10M12 15L7 10" stroke="#0C0C1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M3 17V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V17" stroke="#0C0C1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M3.609 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.807 1.626a1 1 0 0 1 0 1.732l-2.808 1.626L15.206 12l2.492-2.492zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z" fill="#0C0C1A"/>
+                  </svg>
+                  Get on Google Play
+                </a>
+                <a href="https://github.com/AuwalRG8/Sabi/releases" className="download-button-secondary" target="_blank" rel="noopener noreferrer">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L12 15M12 15L17 10M12 15L7 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M3 17V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                   Download APK
                 </a>
-                <div className="download-button-secondary">
+                <div className="download-button-coming-soon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z" fill="#555566"/>
-                    <path d="M12 6C8.69 6 6 8.69 6 12C6 15.31 8.69 18 12 18C15.31 18 18 15.31 18 12C18 8.69 15.31 6 12 6Z" fill="#555566"/>
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" fill="currentColor"/>
                   </svg>
-                  TestFlight coming soon
+                  App Store Coming Soon
                 </div>
               </div>
             </div>
@@ -449,6 +458,15 @@ const NewLandingPage = () => {
                   <p>Chat with the team</p>
                 </div>
               </a>
+              <a href="https://t.me/sabiwallet" className="community-card" target="_blank" rel="noopener noreferrer">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" fill="white"/>
+                </svg>
+                <div className="community-card-content">
+                  <h3>Telegram</h3>
+                  <p>Join our community</p>
+                </div>
+              </a>
             </div>
           </div>
         </section>
@@ -482,6 +500,11 @@ const NewLandingPage = () => {
                     <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" fill="currentColor"/>
                   </svg>
                 </a>
+                <a href="https://t.me/sabiwallet" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" fill="currentColor"/>
+                  </svg>
+                </a>
               </div>
             </div>
             <div className="footer-links-group">
@@ -491,6 +514,7 @@ const NewLandingPage = () => {
                   <li><a href="https://github.com/AuwalRG8/Sabi" className="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                   <li><a href="https://x.com/SabiWallet" className="footer-link" target="_blank" rel="noopener noreferrer">Twitter</a></li>
                   <li><a href="https://discord.gg/3gAArGWt" className="footer-link" target="_blank" rel="noopener noreferrer">Discord</a></li>
+                  <li><a href="https://t.me/sabiwallet" className="footer-link" target="_blank" rel="noopener noreferrer">Telegram</a></li>
                 </ul>
               </div>
               <div className="footer-section">
@@ -513,7 +537,7 @@ const NewLandingPage = () => {
           </div>
           <div className="footer-bottom">
             <p className="footer-copyright">
-              © 2025 Sabi Wallet. Made in Kaduna ❤️ for Nigeria 🇳🇬
+              © 2026 Sabi Wallet. Made in Kaduna ❤️ for Nigeria 🇳🇬
             </p>
           </div>
         </div>

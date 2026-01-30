@@ -315,6 +315,18 @@
   animation: pulse 2s infinite;
 }
 
+/* Live badge styling */
+.hero-badge-live {
+  background: rgba(0, 255, 178, 0.1);
+  border: 1px solid rgba(0, 255, 178, 0.4);
+  color: var(--success-green);
+}
+
+.badge-dot-live {
+  background: var(--success-green);
+  box-shadow: 0 0 8px var(--success-green);
+}
+
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(1.2); }
@@ -391,6 +403,23 @@
 
 .secondary-button:disabled {
   opacity: 0.6;
+}
+
+/* App Store coming soon button */
+.appstore-coming {
+  cursor: default;
+  opacity: 0.7;
+}
+
+/* Play Store button styling */
+.playstore-button {
+  background: var(--accent-orange);
+}
+
+.playstore-button:hover {
+  background: var(--accent-orange-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(247, 147, 26, 0.3);
 }
 
 .hero-mockups {
@@ -919,13 +948,37 @@
   gap: 12px;
   padding: 20px 40px;
   min-height: 56px;
-  background: transparent;
-  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-button);
   font-size: 18px;
   font-weight: var(--font-weight-regular);
-  cursor: not-allowed;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.download-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Coming Soon button for App Store */
+.download-button-coming-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 40px;
+  min-height: 56px;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-button);
+  font-size: 18px;
+  font-weight: var(--font-weight-regular);
+  cursor: default;
   opacity: 0.7;
 }
 

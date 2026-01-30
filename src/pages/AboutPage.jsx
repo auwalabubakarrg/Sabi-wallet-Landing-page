@@ -38,9 +38,9 @@ const teamValues = [
 ]
 
 const roadmapItems = [
-  { phase: "Phase 1", title: "Foundation", status: "completed", items: ["Lightning wallet core", "Naira ↔ Sats display", "Basic send/receive", "Beta release on Android"] },
-  { phase: "Phase 2", title: "Growth", status: "current", items: ["Social recovery system", "P2P BTC/USDT trading", "USSD mode for feature phones", "Multi-language support"] },
-  { phase: "Phase 3", title: "Scale", status: "upcoming", items: ["iOS release", "Nostr integration & zaps", "Merchant tools", "Pan-African expansion"] }
+  { phase: "Phase 1", title: "Foundation", status: "completed", items: ["Lightning wallet core", "Naira ↔ Sats display", "Basic send/receive", "MVP release on Google Play"] },
+  { phase: "Phase 2", title: "Growth", status: "current", items: ["Social recovery system", "P2P BTC/USDT trading", "VTU & Bills payments", "Multi-language support"] },
+  { phase: "Phase 3", title: "Scale", status: "upcoming", items: ["iOS App Store release", "Nostr integration & zaps", "Merchant tools", "Pan-African expansion"] }
 ]
 
 const AboutPage = () => (
@@ -216,12 +216,12 @@ const AboutPage = () => (
                 View on GitHub
               </a>
               <a
-                href="https://github.com/AuwalRG8/Sabi/releases"
+                href="https://play.google.com/store/apps/details?id=com.sabi.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary"
               >
-                Download Beta
+                Get on Play Store
               </a>
             </div>
           </div>
@@ -237,12 +237,12 @@ const AboutPage = () => (
           <h2>Ready to <span className="gradient-text">sabi</span> Bitcoin?</h2>
           <p>Join thousands of Nigerians taking control of their financial future.</p>
           <a
-            href="https://github.com/AuwalRG8/Sabi/releases"
+            href="https://play.google.com/store/apps/details?id=com.sabi.app"
             target="_blank"
             rel="noopener noreferrer"
             className="cta-button"
           >
-            Download Beta Now
+            Get on Play Store
           </a>
         </div>
       </div>
