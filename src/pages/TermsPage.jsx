@@ -64,7 +64,7 @@ const TermsPage = () => {
               <li><strong>No Insurance:</strong> Unlike banks, no FDIC/NDIC – your funds are your responsibility.</li>
               <li><strong>Security:</strong> Use strong PIN/biometric. We are not liable for hacks or losses.</li>
               <li><strong>Not Advice:</strong> Sabi is not financial advice. Consult professionals.</li>
-              <li><strong>Beta Software:</strong> MVP may have bugs – test with small amounts.</li>
+              <li><strong>Early Release:</strong> As an MVP, some features may have limitations – always test with small amounts first.</li>
             </ul>
           </div>
 
